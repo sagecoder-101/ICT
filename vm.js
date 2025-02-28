@@ -42,7 +42,10 @@ Instructions =[
     "STORE 0 4",
     
 ];
-while(pc < Instructions.Length) {
+
+
+while(PC < Instructions.Length) {
+    printMachine()
     let inst = Instructions[pc];
     let instsql = inst.split(" ");
 
@@ -63,6 +66,9 @@ while(pc < Instructions.Length) {
     } else if (op == 'LDRCONSRT') {
         REGS[op2] = op1;
     }
+
+    PC++;
+
 }
 
 
