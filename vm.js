@@ -31,7 +31,7 @@ function printMachine()
     console.log("PC: " + PC);
 }
 
-Instructions =[
+Instructions = [
 
     "STRCONST 10 1",
     "STRCONST 10 2",
@@ -43,10 +43,9 @@ Instructions =[
     
 ];
 
-
-while(PC < Instructions.Length) {
+while(PC < Instructions.length) {
     printMachine()
-    let inst = Instructions[pc];
+    let inst = Instructions[PC];
     let instsql = inst.split(" ");
 
     let op = instsql =[0];
@@ -54,7 +53,7 @@ while(PC < Instructions.Length) {
     let op2 = parseInt[instsql[2]];
 
     if(op == 'LOAD') {
-        REGS[op2] = RAM[op1];
+        REGS[op1] = RAM[op2];
     } else if( op == 'STORE') {
         RAM[op2] = REGS[op1];
     } else if(op == 'ADD') {
