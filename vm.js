@@ -1,4 +1,6 @@
-//
+
+
+
 // intstructions to follow
 
 // *LOAD
@@ -30,17 +32,21 @@ function printMachine()
     console.log("Resgisters" + REGS);
     console.log("PC: " + PC);
 }
-
+// This is the progarm that is being excuted.s
 Instructions = [
 
-    "STRCONST 10 1",
-    "STRCONST 10 2",
-    "STRCONST 10 3",
-    "LOAD 0 1",
-    "LOAD 1 1",
-    "ADD 0 1",
-    "STORE 0 4",
-    
+    "STRCONST 10 1",// let x = 10
+    "STRCONST 10 2",// let y = 30
+    "STRCONST 10 3",// let z = 30
+    "LOAD 0 1",// get x store in 0
+    "LOAD 1 1",// get y store in 1
+    "ADD 0 1",// let tmp = x + y (tmp r0 + r1)
+    "STORE 0 4",// let w =tmp;
+    "LOAD 2 3",
+    "COMD 2 0", 
+    "JUMP 2 3",
+
+
 ];
 
 while(PC < Instructions.length) {
@@ -64,10 +70,20 @@ while(PC < Instructions.length) {
         REM[op2] = op1;
     } else if (op == 'LDRCONSRT') {
         REGS[op2] = op1;
+    } else if(op == 'COMD') {
+        let r = REGS[op1] - REGS[op2];
+        if( r == 0) {
+            REGS[op1] = 0;
+        }
+        else if( op == 'JUMP') {
+            if(REGS[op1] == 0) {
+                PC = op2;
+            }
+        }
+
+
     }
 
     PC++;
 
 }
-
-

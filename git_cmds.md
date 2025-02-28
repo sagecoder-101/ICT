@@ -28,7 +28,6 @@
    git remote add origin git@github.com:sagecoder-101/ICT.git
   git remote get-url origin
    git push -u orgin master
-  git push -u origin master
- git push -u origin master
+ 
 
  ```
