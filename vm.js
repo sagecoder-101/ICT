@@ -18,10 +18,10 @@
 
 
 
-RAM = new Array(512).fill (0, 0, 512);
-RAM.fill =(0, 0, 512);
-REGS =  new Array(6).fill(0, 0, 6);
-
+RAM = new Array(512);
+RAM.fill (0, 0, 512);
+REGS =  new Array(6);
+REGS.fill(0, 0, 6);
 PC = 0;
 
 function printMachine()
